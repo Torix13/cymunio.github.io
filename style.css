@@ -1,0 +1,180 @@
+body {
+    font-family: 'Inter', sans-serif;
+    background: #0e0e1a;
+    margin: 0;
+    padding: 0;
+    color: #ffffff;
+    line-height: 1.6;
+}
+
+section {
+    padding: 60px 20px;
+}
+
+h1, h2, h3 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    text-align: center;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 100px 20px;
+    background: linear-gradient(145deg, #0f0f1f, #12122a)
+}
+.logo {
+    width: 120px;
+    height: auto;
+    margin-bottom: 20px;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { opacity: 1;}
+    50% { opacity: 0.7;}
+    100% { opacity: 1;}
+}
+.cta-btn {
+    display: inline-block;
+    background: #00f0ff;
+    color: #000;
+    padding: 12px 20px;
+    margin: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.cta-btn:hover {
+    background: #00d6e6;
+}
+.about {
+    text-align: center;
+    max-width: 800px;
+    margin: auto;
+}
+    
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    max-width: 1000px;
+    margin: auto;
+    padding-top: 20px;
+}
+
+.service-card{
+    display: grid;
+    gap: 24px;
+    margin-bottom: 50px;
+    padding-top: 10px;
+}
+
+.service-card {
+    background: #1a1a2e;
+    padding: 20px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    background:#24244a;
+}
+
+.service-card h3 {
+    margin-top: 0;
+}
+
+.trust {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    text-align: center;
+    flex-wrap: wrap;
+}
+
+.pillar {
+    max-width: 280px;
+}
+
+.engage-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.book, .pay {
+    background: #1b1b2f;
+    flex: 1 1 300px;
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px solid #1a7ea0;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+form input, form textarea, form select {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background: #333;
+    color: #fff;
+}
+
+form button {
+    background: #00f0ff;
+    color: #000;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+
+form button:hover {
+    background: #00cce6;
+    transform:scale(1.05) ;
+    box-shadow: 0 6px 24px rgba(0,0,0,0.22);
+}
+
+.pay-button {
+    background: #00f0ff;
+    color: #026165;
+    border: 2px solid #056585;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    transition: background 0.3s, transform 0.2s;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.pay-button:hover {
+    background: #00cce6;
+    transform: scale(1.05)
+}
+
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #101010;
+}
