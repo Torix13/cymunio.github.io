@@ -68,27 +68,27 @@ a {
     
 
 .service-grid {
-    display: grid;
+    display: flex; /* grid */
+    flex-wrap: wrap;/* empty */
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
+    gap: 200px;
     max-width: 1000px;
     margin: auto;
     padding-top: 20px;
 }
+/* we can add styling to the category containers */
 
-.service-card{
-    display: grid;
-    gap: 24px;
-    margin-bottom: 50px;
-    padding-top: 10px;
-}
-
-.service-card {
+.service-card { /* merged two service-cards */
     background: #1a1a2e;
     padding: 20px;
     border-radius: 12px;
     cursor: pointer;
     transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    position: relative;
+    align-items: center;
 }
 
 .service-card:hover {
@@ -97,23 +97,92 @@ a {
 }
 
 .service-card h3 {
-    margin-top: 0;
+    margin: 0;/* changed from margin-top: 0; */
 }
 
+/* added service-card description */
+.service-card .description {
+    display: none; 
+    margin-top: 0.8rem;
+    color: #ccc;
+    opacity: 0;
+    transition: opacity 0.3s;
+    
+}
+
+.service-card.show-description .description {
+    display: block; 
+    opacity: 1;
+}
+
+/* Trust Section */
 .trust {
     display: flex;
     justify-content: center;
-    gap: 30px;
-    text-align: center;
+    gap: 20px;
     flex-wrap: wrap;
+    max-width: 1000px;
+    margin: auto;
 }
 
-.pillar {
-    max-width: 280px;
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 9999;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.8);
+    justify-content: center;
+    align-items: center;
 }
+
+.modal .modal-content {
+    background: #1a1a2e;
+    color: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    max-width: 480px;
+    width: 90%;
+    position: relative;
+}
+.modal .close {
+    position: absolute;
+    top: 0.5rem; right: 0.75rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #fff;
+}
+
+.modal-content ul {
+    padding-left: 1.2em;
+    margin-top: 1em;
+}
+
+.modal-content ul li {
+    margin-bottom: 0.5em;
+}
+
+.modal-content a.btn-book {
+    display: inline-block;
+    margin-top: 1em;
+    background: #00f0ff;
+    color: #000;
+    padding: 0.8rem 1.6rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s transform 0.2s;
+}
+
+.modal-content a.btn-book:hover {
+    background: #00cce6;
+    transform: scale(1.05);
+}
+
+/* payment and booking section */
 
 .engage-container {
-    display: flex;
+    display: flex; 
     justify-content: center;
     gap: 20px;
     flex-wrap: wrap;
@@ -158,29 +227,35 @@ form button:hover {
     box-shadow: 0 6px 24px rgba(0,0,0,0.22);
 }
 
-.pay-button {
-    background: #00f0ff;
-    color: #026165;
-    border: 2px solid #056585;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    transition: background 0.3s, transform 0.2s;
-    font-weight: bold;
-    cursor: pointer;
-    margin-top: 10px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-}
 
-.pay-button:hover {
-    background: #00cce6;
-    transform: scale(1.05);
-    box-shadow: 0 6px 24px rgba(0,0,0,0.22);
-}
-
-
+/* Footer */
 footer {
     text-align: center;
     padding: 20px;
     background: #101010;
+    color: #888;
+}
+footer nav {
+    margin-bottom: 1rem, ;
+}
+footer nav a {
+    margin-right: 1rem;
+    color: inherit;
+    text-decoration: none;
+}
+
+/* cookie banner */
+#cookie-banner {
+  position: fixed;
+  bottom: 0; left: 0;
+  width: 100%;
+  background: rgba(0,0,0,0.85);
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  z-index: 2000;
+}
+#cookie-banner button {
+  margin-left: 1rem;
+  padding: 0.5rem 1rem;
 }

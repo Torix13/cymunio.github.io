@@ -4,6 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cymunio | Where Innovation Meets Security</title>
+    <meta name="description" content="Cymunio provides cutting-edge cybersecurity solutions that blend innovation and precision to protect your digital assets.">
+    <meta property="og:title" content="Cymunio | Where Innovation Meets Security">
+    <meta property="og:description" content="Cybersecurity & trust services for businesses.">
+    <!--<meta property="og:image" content="Cymunio logo.jpeg">-->
+    <meta property="og:url" content="https://www.cymunio.com">
+    <meta name="twitter:card" content="summary_large_image">
+
     <link rel="stylesheet" href="style.css" />
     <script defer src="script.js"></script>
 </head>
@@ -28,6 +35,7 @@
         </p>
     </section>
 
+    <!-- Services Section -->
     <section class="services" id="services">
         <h2>Our Services</h2>
         <div class="service-grid">
@@ -39,7 +47,7 @@
         <h2>About Cymunio</h2>
     </section>
 
-
+    <!-- Trust Section -->
     <section class="trust">
         <div class="pillar"><strong>Reliability you can count on</strong><br />Always consistent, always dependable</div>
         <div class="pillar"><strong>Cutting-edge Protection</strong><br />Security powered by innovation not tradition.</div>
@@ -52,15 +60,27 @@
         <div class="engage-container">
             <div class="book">
                 <h3>Book a service</h3>
-                <form>
-                    <input type="text" placeholder="Name" required/>
-                    <input type="email" placeholder="Email" required/>
-                    <select required>
+                <form id="contact-form" action="https://formspree.io/f/yourFormID" method="POST">
+                    <input type="text" name="name" placeholder="Name" required/>
+                    <input type="email" name="email" placeholder="Email" required/>
+                    <select name="service" required>
                         <option disabled selected>Select Service</option>
-                        <option>Risk Assessment</option>
-                        <option>Threat Detection</option>
-                        <option>Cybersecurity Advisory</option>
+                        <option value="RAS">Risk Assessment</option>
+                        <option value="trust">Trust Assurance</option>
+                        <option value="compliance">Compliance & Governance</option>
+                        <option value="TDR">Threat Detection</option>
+                        <option value="privacy">Data Protection & Privacy</option>
+                        <option value="advisory">Cybersecurity Advisory</option>
                     </select>
+                    <textarea name="message" placeholder="message (optional)"></textarea>
+
+
+                    <!--honeypot to prevent spam-->
+                    <div style="display:none;">
+                        <input type="text" name="_gotcha" />
+                    </div>
+
+                    <button type="submit" class="button">Submit</button>
                 </form>
             </div>
             <div class="pay">
@@ -78,8 +98,20 @@
             <a href="#">Home</a>
             <a href="#services">Services</a>
             <a href="#engage">Contact</a>
+            <a href="terms.html">Terms</a>
+            <a href="privacy.html">Privacy</a>
+            <!--terms and conditions link-->
         </nav>
+        <p>We respect your privacy. Payment processing by Paystack, compliant with industry standards.</p>
     </footer>
 
+    <!-- How we use cookies -->
+    <div id="cookie-consent">
+        <p>
+            By continuing to visit this site you agree to our use of cookies.
+            <a href="/privacy.html">Learn more</a>
+            <button id="accept-cookies">Accept</button>
+        </p>
+    </div>
 </body>
 </html>
